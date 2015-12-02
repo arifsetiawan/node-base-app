@@ -8,7 +8,7 @@ For more complete framework, maybe you want to use [Krakenjs](http://krakenjs.co
 A [https://nodejs.org/](https://nodejs.org/) web app base template
 
 * [Express 4.x](http://expressjs.com/)
-* [PostgreSQL](https://github.com/brianc/node-postgres) using [promise version](https://github.com/vitaly-t/pg-promise). Make sure to create those tables first!
+* [Postgres promise](https://github.com/vitaly-t/pg-promise) or ORM (see Working with Postgres section below)
 * [Swig](http://paularmstrong.github.io/swig/). Its not maintained now, [see here](https://github.com/paularmstrong/swig/issues/628)
 * [Bluebird](bluebirdjs.com). ES2015 Promises and Generator for async executions
 
@@ -16,7 +16,9 @@ A [https://nodejs.org/](https://nodejs.org/) web app base template
 
 Strive to use promises everywhere, mostly for function that will be called in controllers.
 
-Mixing promises and callbacks is a big anti-pattern, just think in promises and use [.asCallback](http://bluebirdjs.com/docs/api/ascallback.html) handle the mapping to callback equivalent at the end.
+Mixing promises and callbacks is a big anti-pattern, just think in promises and use [.asCallback](http://bluebirdjs.com/docs/api/ascallback.html) handle the mapping to callback equivalent at the end. Some libraries like Passport is not using Promises yet, so we will need to use callback to return. 
+
+See [Thinking in promises](docs/thinking-in-promises.md)
 
 # How to use
 
@@ -26,14 +28,21 @@ Mixing promises and callbacks is a big anti-pattern, just think in promises and 
 * Setup [postgres](docs/working-with-postgres.md)
 * `$ npm start` or `$ ./start`
 
+# Working with Postgres
+
+We can use direct SQL syntax using [Postgres promise](https://github.com/vitaly-t/pg-promise) or ORM. There are several alternatives for ORM: [Bookshelf](http://bookshelfjs.org/), [Sequelize](http://docs.sequelizejs.com/en/latest/), [rdb](https://github.com/alfateam/rdb), [Objection](https://github.com/Vincit/objection.js), [Knex](https://github.com/tgriesser/knex).
+
+Some examples:
+
+* [SQL directly](examples/pg-direct.js)
+* [Sequelize](examples/pg-sequelize.js)
+
 # TODO
 
 * Security
 * Build tools (grunt or gulp)
 * Change swig
 * Tests and more tests
-* ORM for PostgreSQL. Alternatives are [Bookshelf](http://bookshelfjs.org/), [Sequelize](http://docs.sequelizejs.com/en/latest/) and [rdb](https://github.com/alfateam/rdb)
-* More Postgres example
 
 # Style Guide
 

@@ -23,7 +23,7 @@ module.exports = {
 
     // dir
     appDir: path.join(__dirname, '..'),
-    uploadDir: path.join(__dirname, '..', '/app/public/upload'),
+    uploadDir: path.join(__dirname, '..', '/assets/upload'),
 
     // locale
     i18n: {

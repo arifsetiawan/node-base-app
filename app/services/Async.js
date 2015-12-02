@@ -2,8 +2,9 @@
 
 var Promise = require('bluebird');
 
+// Wrap generator function to handle promises
 // https://www.promisejs.org/generators/
-exports.async = function(makeGenerator) {
+exports.make = function(makeGenerator) {
     return function() {
         var generator = makeGenerator.apply(this, arguments);
 
@@ -27,8 +28,9 @@ exports.async = function(makeGenerator) {
     };
 };
 
+// Wrap express route
 // https://strongloop.com/strongblog/async-error-handling-expressjs-es7-promises-generators/
-exports.wrap = function(genFn) { // 1
+exports.route = function(genFn) { // 1
     var cr = Promise.coroutine(genFn); // 2
     return function(req, res, next) { // 3
         cr(req, res, next).catch(next); // 4

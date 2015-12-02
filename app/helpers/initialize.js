@@ -1,13 +1,6 @@
 
 'use strict';
 
-// This is passport serialize handler
-require('./passport');
-
-// Require database into global here
-require('./database');
-
-// Require all files in directories
 const Promise = require('bluebird');
 const buildDictionary = Promise.promisifyAll(require('sails-build-dictionary'));
 

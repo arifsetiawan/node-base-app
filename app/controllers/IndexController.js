@@ -47,13 +47,13 @@ module.exports = {
         res.render('index', model);
     },
 
-    articles: Async.wrap(function *(req, res, next) {
+    articles: Async.route(function *(req, res, next) {
         const json = yield getJson();
         const processed = yield processJson(json);
         res.send(processed);
     }),
 
-    articlesErr: Async.wrap(function *(req, res, next) {
+    articlesErr: Async.route(function *(req, res, next) {
         const json = yield getErrJson();
         const processed = yield processJson(json);
         res.send(processed);

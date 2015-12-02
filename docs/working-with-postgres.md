@@ -40,6 +40,7 @@ Grant to tables
 ```
 psql baseapp
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO app;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO app;
 ```
 
 Create session table

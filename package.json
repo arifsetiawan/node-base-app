@@ -44,6 +44,7 @@
     "fs-extra": "^0.26.2",
     "i18n": "~0.5.0",
     "include-all": "~0.1.6",
+    "knex": "^0.9.0",
     "lodash": "~3.10.1",
     "moment": "~2.10.6",
     "morgan": "~1.6.1",
@@ -56,7 +57,10 @@
     "pg-promise": "^2.6.1",
     "request": "^2.67.0",
     "sails-build-dictionary": "~0.10.1",
+    "sequelize": "^3.14.2",
+    "sequelize-cli": "^2.2.1",
     "swig": "~1.4.2",
+    "treeize": "^2.0.2",
     "winston": "~2.1.1"
   },
   "devDependencies": {
