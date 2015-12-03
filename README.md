@@ -36,6 +36,7 @@ Some examples:
 
 * [SQL directly](examples/pg-direct.js)
 * [Sequelize](examples/pg-sequelize.js)
+* More is coming
 
 # TODO
 

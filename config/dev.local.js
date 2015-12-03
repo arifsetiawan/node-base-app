@@ -21,6 +21,23 @@ module.exports = {
         },
     },
 
+    // put knexfile config here because we don't want to accidentally publish database credentials on git
+    knex: {
+        client: 'postgresql',
+        connection: {
+            database: this.postgres.database,
+            user:     'username',
+            password: 'password',
+        },
+        pool: {
+            min: 2,
+            max: 10,
+        },
+        migrations: {
+            tableName: 'knex_migrations',
+        },
+    },
+
     // dir
     appDir: path.join(__dirname, '..'),
     uploadDir: path.join(__dirname, '..', '/assets/upload'),
