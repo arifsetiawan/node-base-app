@@ -79,7 +79,7 @@ function async(makeGenerator) {
         // when it complete, it resolve the value, return it and calling next yield with generator.next()
 
         // res1 (value resolved from func1 promise) is passed to func2. 
-        var res2 = yield func2(json);
+        var res2 = yield func2(res1);
     }
     catch (ex) {
         console.error('error', ex);
